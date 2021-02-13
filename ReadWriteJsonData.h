@@ -18,7 +18,8 @@ public:
     void m_Iterator(QJsonObject jsonObj, QString TagName);
     QMap<QString,QString> Map_FData;
     QList<QMap<QString,QString> > ListMap_FData;
-
+    void m_ListMap_DataWrite(QString mName, int fId, QList<QMap<QString, QString> > lMap);
+    void m_Map_DataWrite(QString mName, int fId, QMap<QString, QString> tempMap);
 };
 
 #endif // READWRITEJSONDATA_H

@@ -1,0 +1,21 @@
+{
+    "FDATA": [
+        {
+            "one": "1",
+            "three": "3",
+            "two": "2"
+        },
+        {
+            "one": "11",
+            "three": "33",
+            "two": "22"
+        },
+        {
+            "one": "111",
+            "three": "333",
+            "two": "222"
+        }
+    ],
+    "FUNCTION_ID": "03",
+    "MODULE_NAME": "USER00"
+}

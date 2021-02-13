@@ -91,3 +91,58 @@ void ReadWriteJsonData::m_Iterator(QJsonObject jsonObj, QString TagName)
        //qDebug()<<TagName <<Map_FData;
     }
 }
+
+
+void ReadWriteJsonData::m_ListMap_DataWrite(QString mName, int fId, QList<QMap<QString,QString> > lMap)
+{
+    QJsonObject docObject;
+    docObject.insert("MODULE_NAME", QJsonValue::fromVariant(mName));
+    docObject.insert("FUNCTION_ID", QJsonValue::fromVariant(QString::number(fId).rightJustified(2,'0')));
+
+    QJsonArray listArray;
+    for(int i=0; i<lMap.size(); i++)
+    {
+        QMap<QString, QString> tempMap = lMap[i];
+        QJsonObject tempObject;
+        for (QMap<QString, QString>::iterator iter = tempMap.begin(); iter != tempMap.end(); ++iter)
+            tempObject.insert(iter.key(), iter.value());
+        listArray.push_back(tempObject);
+    }
+
+    docObject.insert("FDATA", listArray);
+
+    QFile file("Sample10.json");
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QJsonDocument doc(docObject);
+        qint64 bytes = file.write(doc.toJson());
+        qDebug()<<"Write bytes "<<bytes;
+    }
+    else
+        qDebug()<<"unable to write";
+
+}
+
+
+void ReadWriteJsonData::m_Map_DataWrite(QString mName, int fId, QMap<QString,QString>  tempMap)
+{
+    QJsonObject docObject;
+    docObject.insert("MODULE_NAME", QJsonValue::fromVariant(mName));
+    docObject.insert("FUNCTION_ID", QJsonValue::fromVariant(QString::number(fId).rightJustified(2,'0')));
+    QJsonObject tempObject;
+    for (QMap<QString, QString>::iterator iter = tempMap.begin(); iter != tempMap.end(); ++iter)
+        tempObject.insert(iter.key(), iter.value());
+
+    docObject.insert("FDATA", tempObject);
+
+    QFile file("Sample11.json");
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QJsonDocument doc(docObject);
+        qint64 bytes = file.write(doc.toJson());
+        qDebug()<<"Write bytes "<<bytes;
+    }
+    else
+        qDebug()<<"unable to write";
+
+}
