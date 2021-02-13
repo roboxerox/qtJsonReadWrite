@@ -1,0 +1,39 @@
+{
+  "MODULE_NAME": "RUNROUTE",
+  "FUNCTION_ID": "02",
+  "FDATA": {
+    "DETAILS": {
+      "trn_number": "77700",
+      "src_stn_code": "DRD",
+      "via_stn_code": "NIG",
+      "dst_stn_code": "CCG",
+      "slow_fast": "S",
+      "jrny_dst": "200",
+      "arv_time": "11:11",
+      "dep_time": "11:11",
+      "total_coach": "6",
+      "h_coach": "1/0",
+      "ladies_spl": "N"
+    },
+    "STATION": [
+      {
+        "stn_code": "DRD",
+        "stn_name": "DAHANU ROAD",
+        "wait_time": "1",
+        "platform_left": "true"
+      },
+      {
+        "stn_code": "VGN",
+        "stn_name": "VANGAON",
+        "wait_time": "1",
+        "platform_left": "true"
+      },
+      {
+        "stn_code": "BOR",
+        "stn_name": "BOISAR",
+        "wait_time": "1",
+        "platform_left": "true"
+      }
+    ]
+  }
+}

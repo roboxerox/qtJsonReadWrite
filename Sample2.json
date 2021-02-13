@@ -1,0 +1,22 @@
+{
+  "MODULE_NAME": "USERSSET",
+  "FUNCTION_ID": "09",
+  "FDATA": [
+    {
+      "id": "0",
+      "level": "5"
+    },
+    {
+      "id": "1",
+      "level": "10"
+    },
+    {
+      "id": "2",
+      "level": "10"
+    },
+    {
+      "id": "3",
+      "level": "12"
+    }
+  ]
+}
